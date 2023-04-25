@@ -4,3 +4,4 @@
 * logo
 * remove auto focus on budget page
 * fix netlify deploys from github
+* shorten toast cooldown
