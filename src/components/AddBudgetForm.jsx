@@ -37,7 +37,7 @@ const AddBudgetForm = () => {
                         id='newBudget'
                         placeholder='e.g., groceries'
                         required
-                        ref={focusRef}
+                        // ref={focusRef}
                     ></input>
                 </div>
                 <div className="grid-xs">

@@ -38,7 +38,7 @@ const AddExpenseForm = ({ budgets }) => {
                             name='newExpense'
                             id='newExpense'
                             placeholder='e.g., Coffee'
-                            ref={focusRef}
+                            // ref={focusRef}
                             required />
                     </div>
                     <div className="grid-xs">
