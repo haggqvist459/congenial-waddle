@@ -30,9 +30,17 @@ svg {
   --lh-1-4: 1.4;
 
   /* colors */
-  --accent: 183 74% 44%;
+  /* blue */
+  /* --accent: 183 74% 44%; */
+  /* green, #10b210 */
+  --accent: 120, 84%, 38%;
+
+  /* white/grey */
   --bkg: 190 60% 98%;
+
+  /* black */
   --text: 185 26% 9%;
+
   --muted: 183 8% 55%;
   --light: 180 14% 85%;
   --warning: 4 66% 63%;
@@ -99,6 +107,10 @@ h3,
 small {
   font-size: var(--fs-200);
   line-height: var(--lh-1);
+}
+
+.bold {
+  font-weight: 700;
 }
 
 p {

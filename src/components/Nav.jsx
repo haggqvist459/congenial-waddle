@@ -3,10 +3,12 @@ import React from 'react'
 import { Form, NavLink } from 'react-router-dom'
 
 //library
-import { TrashIcon } from '@heroicons/react/24/solid'
+import { HomeIcon, TrashIcon } from '@heroicons/react/24/solid'
+
+
 
 //assets
-import logomark from '../assets/logomark.svg'
+// import logomark from '../assets/logomark.svg'
 
 const Nav = ({ userName }) => {
     return (
@@ -14,7 +16,8 @@ const Nav = ({ userName }) => {
             <NavLink
                 to="/"
                 aria-label='Go to home'>
-                <img src={logomark} alt="logo" height={30} />
+                {/* <img src={logomark} alt="logo" height={30} /> */}
+                <HomeIcon width={20} color='#10b210'/>
             </NavLink>
             {
                 userName && (
