@@ -25,7 +25,7 @@ const Intro = () => {
               </button>
             </Form>
         </div>
-        <img src={illustration} width={600}/>
+        <img src={illustration} width={600} alt='bottom page illustration'/>
     </div>
   )
 }
