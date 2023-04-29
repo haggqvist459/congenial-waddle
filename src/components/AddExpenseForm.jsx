@@ -7,7 +7,8 @@ const AddExpenseForm = ({ budgets }) => {
     const fetcher = useFetcher()
 
     const formRef = useRef()
-    const focusRef = useRef()
+    //disabled auto focus on forms
+    // const focusRef = useRef()
     const isSubmitting = fetcher.state === 'submitting'
 
     useEffect(()=> {

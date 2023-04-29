@@ -25,7 +25,9 @@ export async function expenseAction({ request }) {
             id: values.expenseId
         })
         console.log('expense: ', values.newExpense)
-        return toast.success("Expense Deleted!")
+        return toast.success("Expense Deleted!", {
+          autoClose: 2000
+        })
     } catch (error) {
         throw new Error("Error deleting expense.")
     }

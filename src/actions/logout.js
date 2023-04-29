@@ -16,7 +16,9 @@ export default function logoutAction(){
     deleteItem({
         key: "expenses",
     })
-    toast.success("Successfully signed out")
+    toast.success("Successfully signed out", {
+        autoClose: 2000
+    })
 
     //return redirect, back to home page  
     return redirect('/');

@@ -28,18 +28,21 @@ export function dashboardLoader() {
 
 
 //actions
+// FUTURE CHALLENGE
+// replace with reducer - hooks or redux??
+// TODO: move to actions.js
 export async function dashboardAction({ request }) {
     await loadingSim()
     const data = await request.formData();
     const { _action, ...values } = Object.fromEntries(data)
 
-    // FUTURE CHALLENGE
-    // replace with reducer - hooks or redux??
     if (_action === 'newUser') {
         try {
             //attempt to store the username in localstorage
             localStorage.setItem("userName", JSON.stringify(values.userName))
-            return toast.success(`Welcome, ${values.userName}`)
+            return toast.success(`Welcome, ${values.userName}`, {
+                autoClose: 2000
+            })
         } catch (error) {
             throw new Error("Error creating account.")
         }
@@ -51,7 +54,9 @@ export async function dashboardAction({ request }) {
                 name: values.newBudget,
                 amount: values.newBudgetAmount
             })
-            return toast.success("Budget Created")
+            return toast.success("Budget Created", {
+                autoClose: 2000
+            })
         } catch (error) {
             throw new Error("Error creating budget.")
         }
@@ -65,7 +70,9 @@ export async function dashboardAction({ request }) {
                 amount: values.newExpenseAmount,
                 budgetId: values.newExpenseBudget
             })
-            return toast.success(`Expense ${values.newExpense} added`)
+            return toast.success(`Expense ${values.newExpense} added`, {
+                autoClose: 2000
+            })
         } catch (error) {
             throw new Error("Error adding expense.")
         }
@@ -79,7 +86,9 @@ export async function dashboardAction({ request }) {
                 id: values.expenseId
             })
             console.log('expense: ', values.newExpense)
-            return toast.success("Expense Deleted!")
+            return toast.success("Expense Deleted!", {
+                autoClose: 2000
+            })
         } catch (error) {
             throw new Error("Error deleting expense.")
         }
@@ -89,7 +98,7 @@ export async function dashboardAction({ request }) {
 
 const Dashboard = () => {
 
-    //variable for the 
+    //variables for the data 
     const { userName, budgets, expenses } = useLoaderData()
 
     return (
@@ -118,11 +127,11 @@ const Dashboard = () => {
                                             expenses && expenses.length > 0 && (
                                                 <div className="grid-md">
                                                     <h2>Recent Expenses</h2>
-                                                    <Table 
+                                                    <Table
                                                         expenses={expenses
-                                                        // only display the five most recent 
-                                                        // go to the end of the array and cut the last five out since the table sorts the array
-                                                        .slice(Math.max(expenses.length - 5, 0))} />
+                                                            // only display the five most recent 
+                                                            // go to the end of the array and cut the last five out since the table sorts the array
+                                                            .slice(Math.max(expenses.length - 5, 0))} />
                                                     {
                                                         expenses.length > 5 && (
                                                             <Link

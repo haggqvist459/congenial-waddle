@@ -38,8 +38,9 @@ export async function budgetAction({ request }) {
                 key: "expenses",
                 id: values.expenseId
             })
-            console.log('expense: ', values.newExpense)
-            return toast.success("Expense Deleted!")
+            return toast.success("Expense Deleted!", {
+                autoClose: 2000
+            })
         } catch (error) {
             throw new Error("Error deleting expense.")
         }
@@ -52,7 +53,9 @@ export async function budgetAction({ request }) {
                 amount: values.newExpenseAmount,
                 budgetId: values.newExpenseBudget
             })
-            return toast.success(`Expense ${values.newExpense} added`)
+            return toast.success(`Expense ${values.newExpense} added`, {
+                autoClose: 2000
+            })
         } catch (error) {
             throw new Error("Error adding expense.")
         }

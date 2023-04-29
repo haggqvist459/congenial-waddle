@@ -11,12 +11,13 @@ const AddBudgetForm = () => {
     const isSubmitting = fetcher.state === 'submitting'
 
     const formRef = useRef();
-    const focusRef = useRef();
+    // disabling autofocus on forms
+    // const focusRef = useRef();
 
     useEffect(() => {
         if (!isSubmitting) {
             formRef.current.reset()
-            focusRef.current.focus()
+            // focusRef.current.focus()
         }
     }, [isSubmitting])
 
