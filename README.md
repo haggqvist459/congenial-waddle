@@ -7,3 +7,5 @@
 - [*] shorten toast cooldown
 - [ ] single toast component
 - [ ] move actions to separate file (reducers or redux for state?)
+
+[Link to website (https://congenial-waddle.netlify.app)]
